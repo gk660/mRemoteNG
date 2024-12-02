@@ -29,9 +29,7 @@ namespace mRemoteNG.Config.Import
             var xmlConnectionsDeserializer = new XmlConnectionsDeserializer();
             var connectionTreeModel = xmlConnectionsDeserializer.Deserialize(xmlString, true);
 
-            var rootImportContainer = new ContainerInfo {Name = Path.GetFileNameWithoutExtension(fileName)};
-            rootImportContainer.AddChildRange(connectionTreeModel.RootNodes.First().Children.ToArray());
-            destinationContainer.AddChild(rootImportContainer);
+            destinationContainer.AddChildRange(connectionTreeModel.RootNodes.First().Children.ToArray());
         }
     }
 }
